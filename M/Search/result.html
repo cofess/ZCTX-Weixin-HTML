@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>查一查</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="众测天下@zhongcetianxia.com">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" type="text/css" href="../../Public/template/green/css/webapp.css" />
+<!--<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>-->
+<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+</head>
+<body>
+<div class="page" id="page-trends-infinite-scroll">
+    <header class="bar bar-nav bg-main bg-inverse">
+        <div class="row no-gutter">
+            <a class="icon icon-left pull-left back col-10" href="../Index/index.html"></a>
+            <div class="col-90">
+                <div class="searchbar row bg-no">
+                    <div class="search-input col-80">
+                        <label class="icon icon-search" for="search"></label>
+                        <input class="r-round" type="search" id='search' placeholder='输入关键字...' value="艾的牛奶" autocomplete="on" />
+                    </div>
+                    <div class="col-20 text-center"><a>搜索</a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content infinite-scroll" data-distance="100">
+        <div class="block bg-warning-light clearfix">
+            <div class="media content-padded">
+                <div class="media-left"> <img src="../../Public/template/green/img/search_help.png" style="width: 2.4rem"> </div>
+                <div class="media-body">
+                    <h4 class="media-heading fs-1x color-dark">暂无相关内容</h4>
+                    <p class="m-no fs-0x color-grey">为您推荐以下最新检测报告</p>
+                </div>
+            </div>
+        </div>
+        <div class="block bg-white bb">
+            <div class="list-block media-list mv-no">
+                <ul class="list-container">
+                    <li>
+                        <a href="#" class="item-content pr-1x">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">梧柏塘富硒米2.5kg检测</div>
+                                </div>
+                                <div class="item-subtitle">生产日期/批号:2015.08.18</div>
+                                <div class="item-text"><span class="color-red">镉 超标</span></div>
+                            </div>
+                            <div class="item-media"><img src="../../Public/template/green/img/unqualified_mark.png" style="width: 3.5rem;"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item-content pr-1x">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">尚膳坊  湘莲检测</div>
+                                </div>
+                                <div class="item-subtitle">生产日期/批号:2016.01.01</div>
+                                <div class="item-text"><span class="color-red">镉 超标</span></div>
+                            </div>
+                            <div class="item-media"><img src="../../Public/template/green/img/unqualified_mark.png" style="width: 3.5rem;"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item-content pr-1x">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">燕塘纯牛奶检测</div>
+                                </div>
+                                <div class="item-subtitle">生产日期/批号:2015.09.25/301L11106</div>
+                            </div>
+                            <div class="item-media"><img src="../../Public/template/green/img/qualified_mark.png" style="width: 3.5rem;"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item-content pr-1x">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">尚膳坊  湘莲检测</div>
+                                </div>
+                                <div class="item-subtitle">生产日期/批号:2016.01.01</div>
+                                <div class="item-text"><span class="color-red">镉 超标</span></div>
+                            </div>
+                            <div class="item-media"><img src="../../Public/template/green/img/unqualified_mark.png" style="width: 3.5rem;"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item-content pr-1x">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">燕塘纯牛奶检测</div>
+                                </div>
+                                <div class="item-subtitle">生产日期/批号:2015.09.25/301L11106</div>
+                            </div>
+                            <div class="item-media"><img src="../../Public/template/green/img/qualified_mark.png" style="width: 3.5rem;"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item-content pr-1x">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">尚膳坊  湘莲检测</div>
+                                </div>
+                                <div class="item-subtitle">生产日期/批号:2016.01.01</div>
+                                <div class="item-text"><span class="color-red">镉 超标</span></div>
+                            </div>
+                            <div class="item-media"><img src="../../Public/template/green/img/unqualified_mark.png" style="width: 3.5rem;"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item-content pr-1x">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">燕塘纯牛奶检测</div>
+                                </div>
+                                <div class="item-subtitle">生产日期/批号:2015.09.25/301L11106</div>
+                            </div>
+                            <div class="item-media"><img src="../../Public/template/green/img/qualified_mark.png" style="width: 3.5rem;"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item-content pr-1x">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">燕塘纯牛奶检测</div>
+                                </div>
+                                <div class="item-subtitle">生产日期/批号:2015.09.25/301L11106</div>
+                            </div>
+                            <div class="item-media"><img src="../../Public/template/green/img/qualified_mark.png" style="width: 3.5rem;"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 加载提示符 -->
+            <div class="infinite-scroll-preloader">
+                <div class="preloader">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">var basePath="../../Public/template/green";</script>
+<script type="text/javascript" src="../../Public/template/green/js/loading.js"></script>
+<script type="text/javascript" src="../../Public/template/green/sui/sm.min.js"></script>
+<script type="text/javascript" src="../../Public/template/green/js/webapp.js"></script>
+</body>
+</html>

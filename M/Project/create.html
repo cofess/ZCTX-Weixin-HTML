@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>发起检测</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="众测天下@zhongcetianxia.com">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" type="text/css" href="../../Public/template/green/css/webapp.css" />
+<!--<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>-->
+<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+</head>
+<body>
+<div class="page" id="page-no-infinite-scroll">
+    <header class="bar bar-nav bg-main bg-inverse">
+        <a class="icon icon-left pull-left back"></a>
+        <h1 class="title color-white fs-2x fw-bold">发起检测</h1>
+    </header>
+    <div class="content bg-white">
+        <div class="list-block mv-no">
+            <ul>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label w-auto">产品图片：</div>
+                            <div class="item-input">
+                                <a href="/index.php/M/Founding/uploadimg/from/1.html">
+                                    <img src="../../Public/template/green/img/create_founding_photo_default.png" id="chooseImage" class="thumb-0x">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content pr-1x">
+                        <div class="item-inner">
+                            <div class="item-title label w-auto">产品名称：</div>
+                            <div class="item-input">
+                                <input type="text" name="pdname" id="pdname" placeholder="填写产品名称，详细点哦~">
+                            </div>
+                        </div>
+                        <div class="item-media"><a href="#" class="color-main text-center"><i class="icon icon-code"></i><small class="fs-0x ds-block">扫条码</small></a></div>
+                    </div>
+                </li>
+                <li class="align-top">
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label w-auto">众测故事：</div>
+                            <div class="item-input">
+                                <textarea placeholder="食品安全我做主，小伙伴们快来支持我~ 一起来参与食品安全检测..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="list-block accordion-list mv-no">
+            <ul class="before-no">
+                <li class="accordion-item"><a href="#" class="item-content item-link">
+                    <div class="item-inner">
+                        <div class="item-title">更多选项</div>
+                    </div></a>
+                    <div class="accordion-item-content">
+                        <div class="list-block mv-no">
+                            <ul>
+                                <li>
+                                    <a class="item-link item-content" href="../Project/food_category.html">
+                                        <div class="item-inner">
+                                            <div class="item-title label w-auto">产品分类：</div>
+                                            <div class="item-input">
+                                                <input type="text" name="sort_name" id="sort_name" placeholder="选择产品分类" value="" readonly>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="item-link item-content" href="../Project/testing_items.html">
+                                        <div class="item-inner">
+                                            <div class="item-title label w-auto">检测内容：</div>
+                                            <div class="item-input">
+                                                <input type="text" name="packagename" id="packagename" placeholder="选择检测内容" value="" readonly>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="item-link item-content" href="../Project/testing_instruction.html">
+                                        <div class="item-inner">
+                                            <div class="item-title label w-auto">检测机构：</div>
+                                            <div class="item-input">
+                                                <input type="text" name="institutionname" id="institutionname"  placeholder="选择检测机构" value="" readonly>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title label w-auto">检测金额：</div>
+                                            <div class="item-input">
+                                                <label class="color-danger">￥<span id="need_money"></span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="fs-0x p-1x" style="color: #03ab9e;background-color: #e9fbfa">
+            温馨提示:检测金额为检测费用，不包含检测样品费用，最终金额以审核过后的金额为准。
+        </div>
+        <div class="content-block text-center">
+            <a class="color-main" href="../Project/publish_agreement.html">《众测天下用户协议》</a>
+            <p><a class="button button-big button-fill bg-main" id="submit-button">同意协议并发起</a></p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">var basePath="../../Public/template/green";</script>
+<script type="text/javascript" src="../../Public/template/green/js/loading.js"></script>
+<script type="text/javascript" src="../../Public/template/green/sui/sm.min.js"></script>
+<script type="text/javascript" src="../../Public/template/green/js/webapp.js"></script>
+<script>
+    $(function(){
+
+        /*
+         * 来源是新订单的做判断，初始化
+         * 1. 还要判断是否是内页返回的情况
+         * 2. 再判断是不是第一次进入
+         *
+         */
+
+        var iffirstenter = sessionStorage.firstenter;
+        if(iffirstenter===0 || iffirstenter=="" || typeof(iffirstenter)=="undefined") {
+            sessionStorage.sortname = "其它食品";
+            sessionStorage.sortid = 129;
+            sessionStorage.packageids =28;
+            sessionStorage.packageid =28;
+            sessionStorage.packagename ="常规理化";
+            sessionStorage.price =380;
+
+            sessionStorage.institutionname = "PONY谱尼测试集团";
+            sessionStorage.institutionid = 21;
+        } else {
+            $(".accordion-item").addClass("accordion-item-expanded");
+        }
+
+        /*
+         * 页面初始化功能
+         *
+         * 1. 从页面 session 获取名称和品牌的值
+         *
+         */
+
+        var pdname = sessionStorage.pdname;
+        var brand = sessionStorage.brand;
+        var packagename = sessionStorage.packagename;
+
+        //超过10个字的，保留10个
+        if(packagename=="" || typeof(packagename)=="undefined") {
+
+        } else {
+            if(packagename.length>10) {
+                packagename = packagename.substring(0,10)+"...";
+            }
+        }
+
+        var packageid = sessionStorage.packageid;
+        var packageprice = sessionStorage.price;
+        var institutionname = sessionStorage.institutionname;
+        var institutionid = sessionStorage.institutionid;
+        var content = sessionStorage.content;
+        var first_categoryid = sessionStorage.sortid;
+        var sort_name = sessionStorage.sortname;
+        var batch = sessionStorage.batch;
+        var location_detail = sessionStorage.location_detail;
+
+
+        //获取上传的图片缓存资料
+        var imgs1 = sessionStorage.imgs0;
+        var imgs2 = sessionStorage.imgs1;
+        var imgs3 = sessionStorage.imgs2;
+
+
+
+        //$("#pdname").val(pdname);
+        $("#brand").val(brand);
+        $("#packagename").val(packagename);
+        $("input[name='packageid']").val(packageid);
+        $("#institutionname").val(institutionname);
+        $("input[name='institutionid']").val(institutionid);
+        $("#need_money").text(packageprice);
+        $("#emoney").val(packageprice);
+        $("#content").val(content);
+        $("input[name='first_categoryid']").val(first_categoryid);
+        $("#sort_name").val(sort_name);
+        $("#batch").val(batch);
+        $("#location_detail").val(location_detail);
+        //记录微信上传的照片记录
+        $("#wx_media_ids").val(sessionStorage.wx_media_ids);
+
+
+        if(imgs1=="" || typeof(imgs1)=="undefined") {
+
+        } else {
+            $("#show_upload_img").prepend('<li class="blend-imglist-item blend-imglist-small"><a href="#"><img src="'+imgs1+'"></a></li>');
+        }
+
+        if(imgs2=="" || typeof(imgs2)=="undefined") {
+
+        } else {
+            $("#show_upload_img").prepend('<li class="blend-imglist-item blend-imglist-small"><a href="#"><img src="'+imgs2+'"></a></li>');
+        }
+
+        if(imgs3=="" || typeof(imgs3)=="undefined")
+        {
+
+        } else {
+            $("#show_upload_img").prepend('<li class="blend-imglist-item blend-imglist-small"><a href="#"><img src="'+imgs3+'"></a></li>');
+            $("#show_upload_img li:last").hide();
+        }
+
+        /*
+         * 动态记录用户的输入缓存下来
+         */
+        $("#pdname").bind('input propertychange', function() {
+            sessionStorage.pdname = $(this).val();
+        });
+
+        $("#brand").bind('input propertychange', function() {
+            sessionStorage.brand = $(this).val();
+        });
+
+        $("#content").bind('input propertychange', function() {
+            sessionStorage.content = $(this).val();
+        });
+
+        $("#batch").bind('input propertychange', function() {
+            sessionStorage.batch = $(this).val();
+        });
+
+        $("#location_detail").bind('input propertychange', function() {
+            sessionStorage.location_detail = $(this).val();
+        });
+
+
+        $("#submit-button").click(function(){
+
+            //检查填入的信息是否完备
+
+            var pdname = $("#pdname").val();
+            var brand = $("#brand").val();
+            var packageid = $("input[name='packageid']").val();
+            var institutionid = $("input[name='institutionid']").val();
+            var first_categoryid = $("#first_categoryid").val();
+
+            if(pdname==""|| pdname==null) {
+                alert("产品名称不能为空");
+                $("#pdname").focus();
+                return false;
+            }
+
+            if(brand==""|| brand==null) {
+//            alert("品牌不能为空");
+//            $("#brand").focus();
+//            return false;
+            }
+
+            if(packageid==""|| packageid==null) {
+//            alert("检测套餐不能为空");
+//            return false;
+            }
+
+            if(institutionid==""|| institutionid==null) {
+//            alert("检测机构不能为空");
+//            return false;
+            }
+
+            if(first_categoryid==""|| first_categoryid==null) {
+//            alert("产品分类不能为空");
+//            return false;
+            }
+
+            $("#myform").submit();
+        });
+
+    });
+
+</script>
+</body>
+</html>

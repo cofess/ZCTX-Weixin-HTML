@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>扫条码列表页</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="众测天下@zhongcetianxia.com">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" type="text/css" href="../../Public/template/green/css/webapp.css" />
+<!--<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>-->
+<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+<style>
+/*ribbon*/
+.ribbon { padding: 0px; display: inline-block; position: relative; font-size: 0.75rem; text-align: center; margin: 0 auto }
+.ribbon:before, .ribbon:after { content: ""; width: 0px; height: 0px; display: block; position: absolute; z-index: 1; }
+.ribbon:before { border-top: 0.6rem solid #F96755; border-right: 1.0rem solid #F96755; border-bottom: 0.6rem solid #F96755; border-left: 0.5rem solid transparent; border-left-color: rgba(0, 0, 0, 0); bottom: -0.3rem; left: 0; }
+.ribbon:after { border-top: 0.6rem solid #F96755; border-right: 0.5rem solid transparent; border-right-color: rgba(0, 0, 0, 0); border-bottom: 0.6rem solid #F96755; border-left: 1.0rem solid #F96755; bottom: -0.3rem; right: 0; }
+.ribbon > span { background: #FF8071; padding: 0.15rem 0.75rem 0.15rem; margin: 0 1.0rem; display: block; position: relative; z-index: 2; font-weight: bold; text-align: center; color: #ffffff; min-width: 8.0rem;}
+.ribbon > span:before, .ribbon > span:after { content: ""; width: 0px; height: 0px; display: block; position: absolute; z-index: 1; }
+.ribbon > span:before { border-top: 0.15rem solid #C94131; border-right: 0.25rem solid #C94131; border-bottom: 0.15rem solid transparent; border-bottom-color: rgba(0, 0, 0, 0); border-left: 0.25rem solid transparent; border-left-color: rgba(0, 0, 0, 0); bottom: -0.3rem; left: 0; }
+.ribbon > span:after { border-top: 0.15rem solid #C94131; border-right: 0.25rem solid transparent; border-right-color: rgba(0, 0, 0, 0); border-bottom: 0.15rem solid transparent; border-bottom-color: rgba(0, 0, 0, 0); border-left: 0.25rem solid #C94131; bottom: -0.3rem; right: 0; }
+.ribbon > span > span { margin-bottom: 0.1rem; display: block; font-weight: normal; font-size: 0.6rem; color: #f2f2f2; }
+/*list*/
+.list-circle-num, .list-square-num { counter-reset: list1; margin: 0; padding: 0 }
+.list-circle-num > li{ list-style: none outside none; margin-bottom: 0.65rem; padding-left: 1.25rem; position: relative; }
+.list-circle-num > li:before { counter-increment: list1; content: counter(list1) ''; width: 1.0rem; height: 1.0rem; text-align: center; border-radius: 0.5rem; font-size: 0.75rem; border-width: 1px; border-style: solid; margin: 0 0.8rem 0 0; display: inline-block; vertical-align: middle; position: absolute; left: 0; top: 0; }
+.list-circle-num > li > ol{ counter-reset: list2; }
+.list-circle-num > li > ol > li{ margin-bottom: 0.65rem; }
+.list-circle-num > li > ol > li:before { counter-increment: list2; content: counter(list1) "." counter(list2) ""; width: 1.2rem; height: 1.2rem; text-align: center; border-radius: 0.6rem; font-size: 0.75rem; border-width: 1px; border-style: solid; margin: 0 0.8rem 0 0; display: inline-block; vertical-align: middle; }
+.list-circle-num[class*="list-full"] > li::before{ background: #FF8071; color: #ffffff; }
+.list-circle-num > li h4 { margin-bottom: 0; }
+.list-circle-num > li p { margin-top: 0; }
+/*content*/
+.wrap { margin: 1.25rem 0.75rem; padding:0.25rem 0.75rem 0.75rem 0.75rem; -moz-border-radius: 0.5rem; -webkit-border-radius: 0.5rem; border-radius: 0.5rem; background-color: #fff; -webkit-box-shadow: 0 0 0.75rem rgba(0, 0, 0, .2); -moz-box-shadow: 0 0 0.75rem rgba(0, 0, 0, .2); box-shadow: 0 0 0.75rem rgba(0, 0, 0, .2); position: relative; }
+.wrap_header { text-align: center; margin: 0.25rem auto 0.75rem auto; }
+.wrap_body { border-top: 1px dashed #FFD9D4; padding-top: 0.75rem; }
+.clip { width: 2.5rem; height: 2.5rem; background: url(../../Public/template/green/img/clip.png) center no-repeat; background-size: 100% auto; position: absolute; left: 0.25rem; top: -0.55rem; }
+.wrap hr { border:none;border-bottom:1px dashed #e7e7e7 }
+/*content.green*/
+.wrap.green .list-circle-num[class*="list-full"] > li::before, .list-square-num[class*="list-full"] > li::before { background: #01C4C6; }
+.wrap.green .wrap_body{border-color:#01C4C6}
+.wrap.green .ribbon:before { border-top: 0.6rem solid #01B1B3; border-right: 1.0rem solid #01B1B3; border-bottom: 0.6rem solid #01B1B3;}
+.wrap.green .ribbon:after { border-top: 0.6rem solid #01B1B3; border-bottom: 0.6rem solid #01B1B3; border-left: 1.0rem solid #01B1B3; }
+.wrap.green .ribbon > span { background: #01C4C6;}
+.wrap.green .ribbon > span:before { border-top: 0.15rem solid #028D8F; border-right: 0.25rem solid #028D8F;}
+.wrap.green .ribbon > span:after { border-top: 0.15rem solid #028D8F;border-left: 0.25rem solid #028D8F;}
+.not-found{padding-top: 8.0rem;padding-bottom: 8.0rem;color:#8A8A8A}
+/*fixed*/
+.fixed{position: fixed;top:2.2rem;z-index:98;height:6.3rem;}
+.content{padding-top:6.3rem }
+</style>
+</head>
+<body>
+<div class="page" id="page-no-infinite-scroll">
+    <header class="bar bar-nav bg-main bg-inverse">
+        <a class="icon icon-left pull-left back"></a>
+        <h1 class="title color-white fs-2x fw-bold">扫码结果</h1>
+    </header>
+    <div class="content">
+        <div class="fixed">
+            <div class="media mv-no pv-0x bg-white bb">
+                <div class="media-body pl-1x">
+                    <h3 class="media-heading fs-1x">超市蒙牛早餐奶抽样检测</h3>
+                </div>
+                <div class="media-left"> <a href="../Project/create.html"><img src="../../Public/template/green/img/starting_mark.png" style="width: 3.2rem"></a> </div>
+            </div>
+            <div class="buttons-tab">
+                <a href="#tab1" class="tab-link active button">检测报告</a>
+                <a href="#tab2" class="tab-link button">如何选购</a>
+                <a href="#tab3" class="tab-link button">常见问题</a>
+            </div>
+        </div>
+        <div class="tabs">
+            <div id="tab1" class="tab active">
+                <!-- not found -->
+                <!--<div class="not-found">
+                    <div class="text-center">
+                        <img src="../../Public/template/green/img/null_content.png" class="thumb-2x">
+                        <p class="color-grey">暂无相关内容</p>
+                    </div>
+                </div>-->
+                <!--/end not found-->
+                <div class="result_list">
+                    <div class="content-block-title mt-1x">为您推荐以下5份检测报告</div>
+                    <div class="list-block media-list mv-no">
+                        <ul class="list-container">
+                            <li>
+                                <a href="#" class="item-content pr-1x">
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">梧柏塘富硒米2.5kg检测</div>
+                                        </div>
+                                        <div class="item-subtitle">生产日期/批号:2015.08.18</div>
+                                        <div class="item-text"><span class="color-red">镉 超标</span></div>
+                                    </div>
+                                    <div class="item-media"><img src="../../Public/template/green/img/unqualified_mark.png" style="width: 3.5rem;"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-content pr-1x">
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">尚膳坊  湘莲检测</div>
+                                        </div>
+                                        <div class="item-subtitle">生产日期/批号:2016.01.01</div>
+                                        <div class="item-text"><span class="color-red">镉 超标</span></div>
+                                    </div>
+                                    <div class="item-media"><img src="../../Public/template/green/img/unqualified_mark.png" style="width: 3.5rem;"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-content pr-1x">
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">燕塘纯牛奶检测</div>
+                                        </div>
+                                        <div class="item-subtitle">生产日期/批号:2015.09.25/301L11106</div>
+                                    </div>
+                                    <div class="item-media"><img src="../../Public/template/green/img/qualified_mark.png" style="width: 3.5rem;"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-content pr-1x">
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">尚膳坊  湘莲检测</div>
+                                        </div>
+                                        <div class="item-subtitle">生产日期/批号:2016.01.01</div>
+                                        <div class="item-text"><span class="color-red">镉 超标</span></div>
+                                    </div>
+                                    <div class="item-media"><img src="../../Public/template/green/img/unqualified_mark.png" style="width: 3.5rem;"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-content pr-1x">
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">燕塘纯牛奶检测</div>
+                                        </div>
+                                        <div class="item-subtitle">生产日期/批号:2015.09.25/301L11106</div>
+                                    </div>
+                                    <div class="item-media"><img src="../../Public/template/green/img/qualified_mark.png" style="width: 3.5rem;"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-content pr-1x">
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">尚膳坊  湘莲检测</div>
+                                        </div>
+                                        <div class="item-subtitle">生产日期/批号:2016.01.01</div>
+                                        <div class="item-text"><span class="color-red">镉 超标</span></div>
+                                    </div>
+                                    <div class="item-media"><img src="../../Public/template/green/img/unqualified_mark.png" style="width: 3.5rem;"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-content pr-1x">
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">燕塘纯牛奶检测</div>
+                                        </div>
+                                        <div class="item-subtitle">生产日期/批号:2015.09.25/301L11106</div>
+                                    </div>
+                                    <div class="item-media"><img src="../../Public/template/green/img/qualified_mark.png" style="width: 3.5rem;"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="tab2" class="tab">
+                <div class="wrap green">
+                    <div class="clip"></div>
+                    <div class="wrap_header clearfix">
+                        <h3 class="ribbon">
+                            <span>谷物类膨化食品选购指南</span>
+                        </h3>
+                    </div>
+                    <div class="wrap_body">
+                        <img src="../../Public/template/green/img/founding_default_bg.png">
+                        <ol class="list-circle-num list-full">
+                            <li>
+                                <h4 style="color: #01C4C6">避免选购过白的产品</h4>
+                                <p>白度偏高的小麦粉可能添加了漂白剂</p>
+                                <hr/>
+                            </li>
+                            <li>
+                                <h4 style="color: #01C4C6">购买保质期新鲜的产品</h4>
+                                <p>风味、口感最佳，营养价值更高</p>
+                            </li>
+                            <li>
+                                <h4 style="color: #01C4C6">购买包装完整的产品</h4>
+                                <p>避免氧化、返潮以及微生物滋长</p>
+                                <img src="../../Public/template/green/img/founding_default_bg.png">
+                                <hr/>
+                            </li>
+                            <li>
+                                <h4 style="color: #01C4C6">购买气味正常的散装面粉</h4>
+                                <p>避免变质、变味</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div id="tab3" class="tab">
+                <div class="wrap">
+                    <div class="clip"></div>
+                    <div class="wrap_header clearfix">
+                        <h3 class="ribbon">
+                            <span>小麦粉常见问题</span>
+                        </h3>
+                    </div>
+                    <div class="wrap_body">
+                        <img src="../../Public/template/green/img/founding_default_bg.png">
+                        <hr/>
+                        <ol class="list-circle-num list-full">
+                            <li>
+                                <p>面粉在开封后应尽快使用，避免置于空气中吸收湿气。</p>
+                            </li>
+                            <li>
+                                <p>散装面粉应保存在密闭空间，不要直接放在地面上，避免鼠虫入侵。</p>
+                            </li>
+                            <li>
+                                <p>面粉取用时，要保持干燥，避免返潮结块以及生虫。</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">var basePath="../../Public/template/green";</script>
+<script type="text/javascript" src="../../Public/template/green/js/loading.js"></script>
+<script type="text/javascript" src="../../Public/template/green/sui/sm.min.js"></script>
+<script type="text/javascript" src="../../Public/template/green/js/webapp.js"></script>
+</body>
+</html>

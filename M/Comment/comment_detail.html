@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>评论详情</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="众测天下@zhongcetianxia.com">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" type="text/css" href="../../Public/template/green/css/webapp.css" />
+<!--<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>-->
+<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+</head>
+<body>
+<div class="page" id="page-no-infinite-scroll">
+    <header class="bar bar-nav bg-main bg-inverse">
+        <a class="icon icon-left pull-left back"></a>
+        <h1 class="title color-white fs-2x fw-bold">评论详情</h1>
+    </header>
+    <div class="content">
+        <div class="list-block media-list mt-no pb-3x">
+            <ul class="list-container">
+                <li>
+                    <div class="item-content ai-top">
+                        <div class="item-media"><img src="../../Public/template/green/img/avatar.png" class="thumb-1x r-circle"></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">消失的石头</div>
+                            </div>
+                            <div class="item-subtitle"><small>2016-03-17 11:51</small></div>
+                            <div class="item-block">
+                                算了。又不能吃鸡了
+                                <div class="list-block media-list mv-1x bt">
+                                    <ul class="list-container list-unstyled">
+                                        <li>
+                                            <div class="item-content ai-top">
+                                                <div class="item-media"><img src="../../Public/template/green/img/avatar.png" class="thumb-1x r-circle"></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">消失的石头</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><small>2016-03-17 11:51</small></div>
+                                                    <div class="item-block">
+                                                        算了。又不能吃鸡了
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item-content ai-top">
+                                                <div class="item-media"><img src="../../Public/template/green/img/avatar.png" class="thumb-1x r-circle"></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">消失的石头</div>
+                                                    </div>
+                                                    <div class="item-subtitle"><small>2016-03-17 11:51</small></div>
+                                                    <div class="item-block">
+                                                        算了。又不能吃鸡了
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="block bg-grey bt fixed-bottom" id="comment-form">
+            <form>
+                <div class="content-padded clearfix">
+                    <textarea name="content" id="content" class="ds-block w-full r-round-s ph-1x b-light" placeholder="我想说两句" rows="1"></textarea>
+                </div>
+                <div class="content-padded hide clearfix">
+                    <a href="#" class="button button-fill disabled pull-right" id="submit">发布</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">var basePath="../../Public/template/green";</script>
+<script type="text/javascript" src="../../Public/template/green/js/loading.js"></script>
+<script type="text/javascript" src="../../Public/template/green/sui/sm.min.js"></script>
+<script type="text/javascript" src="../../Public/template/green/js/webapp.js"></script>
+<script type="text/javascript">
+    $(function() {
+        //点击任何地方执行
+        $(document).click(function(){
+            document.getElementById('content').rows="1";
+            $("#comment-form").find('.hide').hide();
+        });
+
+        $("#comment-form").click(function(event){
+            document.getElementById('content').rows="3";
+            document.getElementById('content').focus();
+            $("#comment-form").find('.hide').show();
+            event.stopPropagation();//阻止冒泡事件
+        });
+
+        //监听文字输入
+        document.getElementById('content').addEventListener("keyup", function(){
+            //alert("Hello World!");
+            if(document.getElementById('content').value){
+                $("#submit").addClass("bg-main");
+            }else{
+                $("#submit").removeClass("bg-main");
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

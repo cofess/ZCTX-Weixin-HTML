@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>众测天下</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="众测天下@zhongcetianxia.com">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" type="text/css" href="../../Public/template/green/css/webapp.css" />
+<!--<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>-->
+<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+</head>
+<body>
+<!--loading-->
+<div class="loading" id="preLoad">
+	<div class="content-padded load-body pf-center text-center"> <img src="../../Public/template/green/img/loading_img.png" class="loadpng" style="width: 5rem">
+		<div class="color-main mv-0x" id="loadfont">Loading 0%</div>
+	</div>
+</div>
+<div class="page" id="page-news-infinite-scroll">
+	<nav class="bar bar-tab">
+		<a class="tab-item external active" href="../Index/index.html"> <span class="icon zc zc-tab-main"></span> <span class="tab-label">首页</span> </a>
+		<a class="tab-item external" href="../Faq/index.html"> <span class="icon zc zc-tab-faq"></span> <span class="tab-label">常见问题</span> </a>
+		<a class="tab-item tab-circle external" href="../Scan/result.html"> <span class="icon zc zc-tab-scan"></span> <span class="tab-label">扫描</span> </a>
+		<a class="tab-item external" href="../Harm/index.html"> <span class="icon zc zc-tab-harm"></span> <span class="tab-label">危害须知</span> </a>
+		<a class="tab-item external" href="../Member/index.html"> <span class="icon zc zc-tab-me"></span> <span class="tab-label">我的</span> </a>
+	</nav>
+	<div class="content">
+		<!-- 这里是页面内容区 -->
+		<!-- Slider -->
+		<div class="banner swiper-container p-no" data-space-between='0'>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><a href=""><img src="../../Public/template/green/img/banner/happy_new_year.jpg" alt="Happy New Year!"></a></div>
+				<div class="swiper-slide"><a href=""><img src="../../Public/template/green/img/banner/happy_new_year.jpg" alt="Happy New Year!"></a></div>
+			</div>
+			<div class="swiper-pagination swiper-pagination-white"></div>
+		</div>
+		<div class="block bg-white bv mt-no">
+			<div class="content-padded">
+				<div class="row">
+					<div class="col-50">
+						<a href="../Search/index.html">
+							<div class="media">
+								<div class="media-left"> <img src="../../Public/template/green/img/index1.png" style="width: 2.4rem"> </div>
+								<div class="media-body">
+									<h4 class="media-heading fs-1x color-dark">查一查</h4>
+									<p class="m-no fs-0x color-grey">优品劣品全知道</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-50">
+						<a href="../Project/latest_lists.html">
+							<div class="media">
+								<div class="media-left"> <img src="../../Public/template/green/img/index2.png" style="width: 2.4rem"> </div>
+								<div class="media-body">
+									<h4 class="media-heading fs-1x color-dark">最新报告</h4>
+									<p class="m-no fs-0x color-grey">看看最新检测结果</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-50">
+						<a href="../Project/create.html">
+							<div class="media">
+								<div class="media-left"> <img src="../../Public/template/green/img/index3.png" style="width: 2.4rem"> </div>
+								<div class="media-body">
+									<h4 class="media-heading fs-1x color-dark">发起检测</h4>
+									<p class="m-no fs-0x color-grey">食品好坏测测便知</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-50">
+						<a href="../Project/takepart_list.html">
+							<div class="media">
+								<div class="media-left"> <img src="../../Public/template/green/img/index4.png" style="width: 2.4rem"> </div>
+								<div class="media-body">
+									<h4 class="media-heading fs-1x color-dark">参与检测</h4>
+									<p class="m-no fs-0x color-grey">一元支持即可参与</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block bg-white bv mv-0x">
+			<div class="content-padded">
+				<div class="row">
+					<div class="col-50"> <a href="../News/weekly.html">
+						<div class="p-1x" style="background-color:#C0E4FD; border: none; text-align: center;"> <strong class="text-nowrap">食事周刊</strong>
+							<label class="fs-0x text-nowrap">吃的安全吃的健康</label>
+						</div>
+					</a> </div>
+					<div class="col-50"> <a href="../Search/unsafe.html">
+						<div class="p-1x" style="background-color:#FFCBD9; border: none; text-align: center;color:#fe62a3;"> <strong class="text-nowrap">有害产品曝光</strong>
+							<label class="fs-0x text-nowrap">远离危害预防中招</label>
+						</div>
+					</a> </div>
+				</div>
+			</div>
+		</div>
+		<div class="block bg-white bv">
+			<div class="bb clearfix">
+				<div class="content-padded clearfix">
+					<div class="row no-gutter">
+						<div class="col-60">
+							<div class="title-line"><span class="color-main">热点资讯</span></div>
+						</div>
+						<div class="col-40">
+							<div class="btn-group pull-right"> 
+								<a href="#tab1" class="tab-link active button">时间</a> <a href="#tab2" class="tab-link button">热度</a> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tabs">
+				<div id="tab1" class="tab infinite-scroll active" data-distance="100">
+					<div class="list-block media-list mv-no">
+						<ul class="list-container before-no">
+							<li>
+								<a href="../News/detail.html" class="item-content pr-1x">
+									<div class="item-inner">
+										<div class="item-text color-dark">关系更亲密？巴西婴儿母乳喂养率居全球前列</div>
+										<div class="item-subtitle"><span>众测天下</span><span class="color-grey pull-right"><i class="zc zc-comment zc-w pull-left"></i> 99+</span></div>
+									</div>
+									<div class="item-media"><img src="../../Public/template/green/img/demo/thumb.jpg" style="width: 3rem;"></div>
+								</a>
+							</li>
+							<li>
+								<a href="../News/detail.html" class="item-content pr-1x">
+									<div class="item-inner">
+										<div class="item-text color-dark">关系更亲密？巴西婴儿母乳喂养率居全球前列</div>
+										<div class="item-subtitle"><span>众测天下</span><span class="color-grey pull-right"><i class="zc zc-comment zc-w pull-left"></i> 99+</span></div>
+									</div>
+									<div class="item-media"><img src="../../Public/template/green/img/demo/thumb.jpg" style="width: 3rem;"></div>
+								</a>
+							</li>
+							<li>
+								<a href="../News/detail.html" class="item-content pr-1x">
+									<div class="item-inner">
+										<div class="item-text color-dark">关系更亲密？巴西婴儿母乳喂养率居全球前列</div>
+										<div class="item-subtitle"><span>众测天下</span><span class="color-grey pull-right"><i class="zc zc-comment zc-w pull-left"></i> 99+</span></div>
+									</div>
+									<div class="item-media"><img src="../../Public/template/green/img/demo/thumb.jpg" style="width: 3rem;"></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- 加载提示符 -->
+					<div class="infinite-scroll-preloader">
+						<div class="preloader"> </div>
+					</div>
+				</div>
+				<div id="tab2" class="tab infinite-scroll" data-distance="100">
+					<div class="list-block media-list mv-no">
+						<ul class="list-container before-no">
+							<li>
+								<a href="../News/detail.html" class="item-content pr-1x">
+									<div class="item-inner">
+										<div class="item-text color-dark">热点-关系更亲密？巴西婴儿母乳喂养率居全球前列</div>
+										<div class="item-subtitle"><span>众测天下</span><span class="color-grey pull-right"><i class="zc zc-comment zc-w pull-left"></i> 99+</span></div>
+									</div>
+									<div class="item-media"><img src="../../Public/template/green/img/demo/thumb.jpg" style="width: 3rem;"></div>
+								</a>
+							</li>
+							<li>
+								<a href="../News/detail.html" class="item-content pr-1x">
+									<div class="item-inner">
+										<div class="item-text color-dark">关系更亲密？巴西婴儿母乳喂养率居全球前列</div>
+										<div class="item-subtitle"><span>众测天下</span><span class="color-grey pull-right"><i class="zc zc-comment zc-w pull-left"></i> 99+</span></div>
+									</div>
+									<div class="item-media"><img src="../../Public/template/green/img/demo/thumb.jpg" style="width: 3rem;"></div>
+								</a>
+							</li>
+							<li>
+								<a href="../News/detail.html" class="item-content pr-1x">
+									<div class="item-inner">
+										<div class="item-text color-dark">关系更亲密？巴西婴儿母乳喂养率居全球前列</div>
+										<div class="item-subtitle"><span>众测天下</span><span class="color-grey pull-right"><i class="zc zc-comment zc-w pull-left"></i> 99+</span></div>
+									</div>
+									<div class="item-media"><img src="../../Public/template/green/img/demo/thumb.jpg" style="width: 3rem;"></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- 加载提示符 -->
+					<div class="infinite-scroll-preloader">
+						<div class="preloader"> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">var basePath="../../Public/template/green";</script>
+<script type="text/javascript" src="../../Public/template/green/js/loading.js"></script>
+<script type="text/javascript" src="../../Public/template/green/sui/sm.min.js"></script>
+<script type="text/javascript" src="../../Public/template/green/js/webapp.js"></script>
+</body>
+</html>

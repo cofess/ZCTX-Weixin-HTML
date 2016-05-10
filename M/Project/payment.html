@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>支付</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="众测天下@zhongcetianxia.com">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" type="text/css" href="../../Public/template/green/css/webapp.css" />
+<!--<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>-->
+<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+</head>
+<body>
+<div class="page" id="page-no-infinite-scroll">
+    <header class="bar bar-nav bg-main bg-inverse">
+        <a class="icon icon-left pull-left back"></a>
+        <h1 class="title color-white fs-2x fw-bold">支付</h1>
+    </header>
+    <div class="content">
+        <div class="list-block media-list mt-no mb-0x">
+            <ul>
+                <li class="item-content">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title">玉其 薄荷糕 散装称重检测</div>
+                        <div class="item-subtitle">发起人：消失的石头</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <form method="post" id="myform">
+            <div class="block bg-white mv-0x clearfix">
+                <div class="content-padded">
+                    <div class="media">
+                        <div class="media-left"><div style="width: 2.0rem">支持</div></div>
+                        <div class="media-body">
+                            <div class="content-padded">
+                                <div class="row sponsor_pay">
+                                    <div class="col-25"><button type="button" class="pay_item button button-light w-full r-no active" data-money="1">1元</button></div>
+                                    <div class="col-25"><button type="button" class="pay_item button button-light w-full r-no" data-money="10">10元</button></div>
+                                    <div class="col-25"><button type="button" class="pay_item button button-light w-full r-no" data-money="20">20元</button></div>
+                                    <div class="col-25"><button type="button" class="pay_item button button-light w-full r-no" data-money="50">50元</button></div>
+                                </div>
+                            </div>
+                            <div class="content-padded">
+                                <input type="number" name="donate_other_money" id="donate_other_money" placeholder="自定义金额" style="border: 1px solid #ddd;width: 60%;padding:0.25rem;">元
+                                <input type="hidden" name="donate_money" id="donate_money" placeholder="输入金额" value="1" style="border: 1px solid #ddd;width: 60%;padding:0.25rem;"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-block mv-0x">
+                <ul>
+                    <li class="item-link item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">红包</div>
+                            <div class="item-after">3个红包可用</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="list-block mv-0x">
+                <ul>
+                    <li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">支付金额</div>
+                            <div class="item-after color-red"><span>￥</span><span id="money_to_pay">1</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <label class="label-checkbox item-content pr-1x">
+                            <div class="item-inner">
+                                <div class="media">
+                                    <div class="media-left"> <img src="../../Public/template/green/img/payment_alipay.png" style="width: 2.4rem"> </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">支付宝支付</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="checkbox" type="checkbox" name="checkbox">
+                            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="label-checkbox item-content pr-1x">
+                            <div class="item-inner">
+                                <div class="media">
+                                    <div class="media-left"> <img src="../../Public/template/green/img/payment_wechat.png" style="width: 2.4rem"> </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">微信支付</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="checkbox" type="checkbox" name="checkbox">
+                            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </form>
+        <div class="block bg-white fixed-bottom">
+            <a href="" class="button button-big button-fill bg-main r-no">确认支付</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">var basePath="../../Public/template/green";</script>
+<script type="text/javascript" src="../../Public/template/green/js/loading.js"></script>
+<script type="text/javascript" src="../../Public/template/green/sui/sm.min.js"></script>
+<script type="text/javascript" src="../../Public/template/green/js/webapp.js"></script>
+<script>
+    $(function(){
+//    sessionStorage.clear();
+
+        $(".pay_item").on("click",function(){
+            var money_to_pay = parseInt($(this).attr("data-money"));
+
+            $("#money_to_pay").text(money_to_pay);
+            $("#donate_money").val(money_to_pay);
+            $("#donate_other_money").val("");
+
+            /*
+             * 清除其他的样式
+             */
+            $(".pay_item").removeClass("active");
+            $(this).addClass("active");
+
+        });
+
+        $("#donate_other_money").bind('input propertychange', function() {
+            console.log($(this).val());
+            $("#donate_money").val($(this).val());
+            $("#money_to_pay").text($(this).val());
+
+            $(".pay_item").removeClass("active");
+        });
+    });
+</script>
+<!--取出来本地存储的信息，提交到服务器，得到返回结果再显示-->
+<script type="text/javascript">
+    $(function() {
+        $('.wx-pay-btn').on('click', function() {
+            //判断金额的输入
+            var price = $("#donate_money").val();
+
+            var reg = /^[0-9]*[1-9][0-9]*$/;
+//                var reg = /^\\d+$/;
+            var strNumber = $("#donate_money").val();
+            if(reg.test(strNumber)) {
+                if(price>=1) {
+                    $("#myform").submit();
+                } else {
+                    alert("温馨提示：跟投众测项目1元起");
+                }
+            } else {
+                if(price==0) {
+                    $("#myform").submit();
+                } else {
+                    alert("请输入整数金额");
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>查一查</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="众测天下@zhongcetianxia.com">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/??sm.min.css,sm-extend.min.css">
+<link rel="stylesheet" type="text/css" href="../../Public/template/green/css/webapp.css" />
+<!--<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>-->
+<script src="http://wximg.qq.com/wxp/libs/wxmoment/0.0.4/wxmoment.min.js"></script>
+</head>
+<body>
+<div class="page" id="page-no-infinite-scroll">
+    <header class="bar bar-nav bg-main bg-inverse">
+        <div class="row no-gutter">
+            <a class="icon icon-left pull-left back col-10" href="../Index/index.html"></a>
+            <div class="col-90">
+                <div class="searchbar row bg-no">
+                    <div class="search-input col-80">
+                        <label class="icon icon-search" for="search"></label>
+                        <input class="r-round" type="search" id='search' placeholder='输入关键字...' autocomplete="on" />
+                    </div>
+                    <div class="col-20 text-center"><a href="../Search/result.html">搜索</a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="content-block-title mt-1x">热门搜索</div>
+        <div class="content-padded grid-demo">
+            <div class="row">
+                <div class="col-33 text-center mb-0x">
+                    <a href="../Search/result.html"><div class="bg-white p r text-nowrap color-dark">粮食</div></a>
+                </div>
+                <div class="col-33 text-center mb-0x">
+                    <a href="../Search/result.html"><div class="bg-white p r text-nowrap color-dark">生鲜</div></a>
+                </div>
+                <div class="col-33 text-center mb-0x">
+                    <a href="../Search/result.html"><div class="bg-white p r text-nowrap color-dark">调味品</div></a>
+                </div>
+                <div class="col-33 text-center mb-0x">
+                    <a href="../Search/result.html"><div class="bg-white p r text-nowrap color-dark">食用油</div></a>
+                </div>
+                <div class="col-33 text-center mb-0x">
+                    <a href="../Search/result.html"><div class="bg-white p r text-nowrap color-dark">乳制品</div></a>
+                </div>
+                <div class="col-33 text-center mb-0x">
+                    <a href="../Search/result.html"><div class="bg-white p r text-nowrap color-dark">糖果</div></a>
+                </div>
+                <div class="col-33 text-center mb-0x">
+                    <a href="../Search/result.html"><div class="bg-white p r text-nowrap color-dark">饮料</div></a>
+                </div>
+                <div class="col-33 text-center mb-0x">
+                    <a href="../Search/result.html"><div class="bg-white p r text-nowrap color-dark">茶叶</div></a>
+                </div>
+                <div class="col-33 text-center mb-0x">
+                    <a href="../Search/result.html"><div class="bg-white p r text-nowrap color-dark">薯片</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="list-block contacts-block media-list mt-2x">
+            <ul class="list-container search-history">
+                <li class="list-group-title color-grey">最近搜过</li>
+                <!--<li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title color-grey">蔬菜</div>
+                                <div class="item-after color-grey">✕</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title color-grey">水果</div>
+                                <div class="item-after color-grey">✕</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title color-grey">饮料</div>
+                                <div class="item-after color-grey">✕</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title color-grey">食用油</div>
+                                <div class="item-after color-grey">✕</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>-->
+                <li>
+                    <a class="item-content clearall">
+                        <div class="item-inner">
+                            <div class="item-title color-grey text-center">清楚搜索历史</div>
+                        </div>
+                    </a>
+                </li>
+                </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">var basePath="../../Public/template/green";</script>
+<script type="text/javascript" src="../../Public/template/green/js/loading.js"></script>
+<script type="text/javascript" src="../../Public/template/green/sui/sm.min.js"></script>
+<script type="text/javascript" src="../../Public/template/green/js/webapp.js"></script>
+<!--Local storage-->
+<script type="text/javascript" src="../../Public/template/green/js/store.min.js"></script>
+<script>
+    init()
+    function init() {
+        if (!store.enabled) {
+            alert('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.')
+            return
+        }
+        store.set('keywords', ['蔬菜', '水果', '饮料']);
+        var words = store.get('keywords');
+        words.push('食用油');
+        store.set('keywords',words);
+        var keywords = store.get('keywords');
+        var html = '';
+        for(var i=0;i<keywords.length;i++){
+            //alert(keywords[i]);
+            html += '<li class="list-item"><div class="item-content"><div class="item-inner"><div class="item-title-row"><div class="item-title color-grey">'+keywords[i]+'</div><a class="item-after color-grey clearthis">✕</a></div></div></div></li>';            
+        }
+        $('.search-history .list-group-title').after(html); 
+
+        $(".clearall").on("click",function(){
+            store.remove('蔬菜');
+            //localStorage.removeItem("keywords");
+            $('.list-item').remove(); 
+            //alert('OK');
+        }); 
+
+        $(".clearthis").on("click",function(){
+            $(this).parent().parent().parent().parent('.list-item').remove(); 
+            //alert('OK');
+        }); 
+    }
+</script>
+</body>
+</html>
