@@ -1,2 +1,6 @@
-# ZCTX-Weixin-HTML
-众测天下微信前端静态页面，基于淘宝前端框架SUI Mobile
+### 阳台宝贝
+微站：https://cofess.github.com/mobile-static-site/yangtaibaobei/
+商城：https://cofess.github.com/mobile-static-site/yangtaibaobei/Mall/index.html
+
+### 众测天下
+微站：https://cofess.github.com/mobile-static-site/zc/M/Index/index.html
