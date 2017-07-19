@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>阳台宝贝</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="众测天下@zhongcetianxia.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link href="https://cdn.bootcss.com/light7/0.4.3/css/light7.min.css" rel="stylesheet">
+  <link href="lib/iconfont/iconfont.css" rel="stylesheet">
+  <link href="assets/css/webapp.css" rel="stylesheet">
+  <style type="text/css">
+  /*timeline*/
+  
+  .timeline {
+    position: static;
+  }
+  
+  .timeline > li .datetime {
+    left: 0.35rem;
+  }
+  
+  .timeline > li .icon {
+    width: 0.65rem;
+    height: 0.65rem;
+    background: url("assets/images/icon_timeline.png") center no-repeat;
+    background-size: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    left: 2.85rem;
+    top: 0.60rem;
+  }
+  
+  #chooseImage {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+    margin: 0.3rem;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKEAAAChCAYAAACvUd+2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTRBQzkwRTMyQkIxMTFFNkFEMUNCQUQyQzgwRDk0QkUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTRBQzkwRTQyQkIxMTFFNkFEMUNCQUQyQzgwRDk0QkUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NEFDOTBFMTJCQjExMUU2QUQxQ0JBRDJDODBEOTRCRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1NEFDOTBFMjJCQjExMUU2QUQxQ0JBRDJDODBEOTRCRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvFhRYoAAALtSURBVHja7NxPSuNQHMDxGLProOIBxPXAiAvBG3gDr+HKY3gDZ+sluutScGBQcC1uXPoHu1T8paRMKEGlY/Js+vnAE3yKlfBo8m36ujIajdazLDuI8RhjGGP6/ZR5823Nn8fYL+LLVozTGL9rv3xY++Vb8+Zbmr+LcbISz4TlIjyKcZxBt37FOMurFWkBkkzecK6GrkyuF/PqmvDE8SCByVm4cBxIqDwL7+eOAwlNzsJ59u91HEgWJuoYdYw6VseoY9QxqGOEiTpGHaOO1THqGHUM6hhhoo5Rx6hjdYw6Rh2DOkaYqGPUMepYHaOOUcegjhEm6hh1jDpWx6hj1DGoY4SJOkYdo47VMeoYdQzqGGGijlHHqGN1jDpGHYM6ZrkV6nh+g8Hg3Z+Px2MH6ZOLcHJe9mw4t9UYuzNzf2O8ODSfq+OiVsc7jslcfsS4mJnbqA4w6hh1DOqYReDeMd9iEbp3TNI6du8YdYw6VseoY1DHqGPUsTpGHaOO1THqGNQx6hh1rI5Rx6hjdYw6BnVMcr3dd/zRxvS+/A8LvsF+KfYdlxvT11p+jKa/v1GdZdr0lC3+BvulqOOfMS4TPO5NB49RPmlcqWNQx6hjUMcfuo6x2UGYzF4Dblfh0HaYLLqlqOOyHu9bfozXhrmHzKdyqeMuXj/zIZnqGHUM6pgeLULvrCZpHXtnNeoYdayOUcegjlHHqGN1jDpGHatj1DGoY9Qx6lgdo45Rx+oYdQzqGHWMOu77vuMuPMfYa5hDHXem3GD/x2GYv44twv9gc7s6Rh2DOqYndezeMeoYdezeMeoY1DHqGHWsjlHHqGN1jDoGdYw6Rh2rY9Qx6lgdo45BHaOOUcfqGHWMOlbHqGNQx6hj1LE6Rh2jjtUx6hjUMeoYdayOUceoY3WMOgZ1jDpGHatj1DHqWB2jjkEdo45Rx+oYdYw6VseoYyiqRXge47B+sdgQLObNf/X81nQRrtcW4PRicWjefEfzwzcBBgDg09XAfXKEpgAAAABJRU5ErkJggg==") center no-repeat;
+    background-size: 100% 100%;
+    text-indent: -999rem;
+  }
+  </style>
+</head>
+
+<body class="theme-green">
+  <div class="page page-wrap" id="page-picker">
+    <header class="bar bar-nav bar-fill">
+      <a class="icon iconfont icon-jiantou-copy pull-left back" href="index.html"></a>
+      <a class="icon iconfont icon-menu open-panel pull-right"></a>
+      <h1 class="title">阳台宝贝</h1>
+    </header>
+    <div class="footbar fixed-bottom text-center">
+      <div class="bg-cloud"></div>
+      <a class="button button-fill button-big button-success open-popup" data-popup=".popup-record"><i class="iconfont icon-wozhongzhitubiao256x256px13"></i> 添加记录 </a>
+    </div>
+    <div class="content">
+      <ul class="timeline">
+        <li class="action"></li>
+        <li>
+          <div class="chapter"><a class="button button-success button-fill">2016.8</a></div>
+          <ul>
+            <li>
+              <time class="datetime"><span>8/13</span></time>
+              <div class="icon"></div>
+              <div class="card">
+                <a href="diary-details.html">
+                  <div class="card-content">
+                    <div class="card-content-inner color-dark">我的小西红柿今天开花了</div>
+                  </div>
+                  <div class="card-footer color-grey">
+                    <span><i class="iconfont icon-weibiaoti2zhuanhuan mr"></i>30</span>
+                    <span><i class="iconfont icon-liulanliang mr"></i>100</span>
+                    <span><i class="iconfont icon-riqi1 mr"></i>2016.8.13</span>
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="chapter"><a class="button button-success button-fill">2016.7</a></div>
+          <ul>
+            <li>
+              <time class="datetime"><span>7/13</span></time>
+              <div class="icon"></div>
+              <div class="card">
+                <a href="diary-details.html">
+                  <div class="card-content">
+                    <div class="card-content-inner color-dark">我的小西红柿今天开花了</div>
+                  </div>
+                  <div class="card-footer color-grey">
+                    <span><i class="iconfont icon-weibiaoti2zhuanhuan mr"></i>30</span>
+                    <span><i class="iconfont icon-liulanliang mr"></i>100</span>
+                    <span><i class="iconfont icon-riqi1 mr"></i>2016.7.13</span>
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="chapter"><a class="button button-success button-fill">2015.12</a></div>
+          <ul>
+            <li>
+              <time class="datetime"><span>12/25</span></time>
+              <div class="icon"></div>
+              <div class="card">
+                <a href="diary-details.html">
+                  <div class="card-content">
+                    <div class="card-content-inner color-dark">我的小西红柿今天开花了</div>
+                  </div>
+                  <div class="card-footer color-grey">
+                    <span><i class="iconfont icon-weibiaoti2zhuanhuan mr"></i>30</span>
+                    <span><i class="iconfont icon-liulanliang mr"></i>100</span>
+                    <span><i class="iconfont icon-riqi1 mr"></i>2015.12.25</span>
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- /page -->
+  <div class="panel-overlay"></div>
+  <!-- Right Panel with Reveal effect -->
+  <div class="panel panel-light panel-right panel-reveal sidebar">
+    <div class="panel-header">
+      <div class="panel-title">阳台宝贝</div>
+    </div>
+    <div class="list-block">
+      <ul>
+        <li>
+          <a href="index.html" class="item-content color-dark">
+            <div class="item-media"><i class="iconfont icon-home"></i></div>
+            <div class="item-inner">
+              <div class="item-title">首页</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="plant.html" class="item-content color-dark">
+            <div class="item-media"><i class="iconfont icon-hua4"></i></div>
+            <div class="item-inner">
+              <div class="item-title">开始种植</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="diary.html" class="item-content color-dark">
+            <div class="item-media"><i class="iconfont icon-jilu"></i></div>
+            <div class="item-inner">
+              <div class="item-title">种植日记</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="baike.html" class="item-content color-dark">
+            <div class="item-media"><i class="iconfont icon-shiyongjilu"></i></div>
+            <div class="item-inner">
+              <div class="item-title">知识百科</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="Mall/index.html" class="item-content color-dark">
+            <div class="item-media"><i class="iconfont icon-shangcheng"></i></div>
+            <div class="item-inner">
+              <div class="item-title">在线商城</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="about.html" class="item-content color-dark">
+            <div class="item-media"><i class="iconfont icon-xiaolian2"></i></div>
+            <div class="item-inner">
+              <div class="item-title">关于我们</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- popup -->
+  <div class="popup popup-record">
+    <header class="bar bar-nav">
+      <a class="icon iconfont icon-iconfonticonfontclose button button-link button-nav pull-right close-popup"></a>
+      <h1 class="title">添加记录</h1>
+    </header>
+    <div class="content">
+      <div class="content-inner b-no">
+        <form class="form-box" method="post" enctype="multipart/form-data">
+          <div class="list-block list-base m-no">
+            <ul>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <textarea name="content" placeholder="说点什么吧"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">上传照片</div>
+                    <div class="item-input">
+                      <a class="button button-fill button-big" id="chooseImage">chooseImage</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="content-padded">
+            <button type="submit" class="button button-fill button-big close-popup" style="width: 100%">确认</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- /popup -->
+  <script src="lib/js/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript">$.config = {router: false}</script>
+  <script src="lib/light7/js/light7.min.js"></script>
+  <script type="text/javascript" src="assets/js/webapp.js"></script>
+  <!-- weixin js -->
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    'use strict';
+
+    //微信配置
+    wx.config({
+      debug: false,
+      appId: 'wxf8b4f85f3a794e77',
+      timestamp: 1472527362,
+      nonceStr: 'qpbH42FHuPafDQ2K',
+      signature: '4814fc2d635a0c7180fd366fede57eea4ebf6e4d',
+      jsApiList: [
+        'chooseImage',
+        'previewImage',
+        'uploadImage',
+        'downloadImage',
+      ]
+    });
+
+    wx.ready(function() {
+      // 5 图片接口
+      // 5.1 拍照、本地选图
+      var images = {
+        localId: [],
+        serverId: []
+      };
+      document.querySelector('#chooseImage').onclick = function() {
+        wx.chooseImage({
+          count: 1, // 默认9
+          success: function(res) {
+            images.localId = res.localIds;
+            alert('已选择 ' + res.localIds.length + ' 张图片');
+          }
+        });
+      };
+    });
+    $.init();
+  });
+  </script>
+</body>
+
+</html>
