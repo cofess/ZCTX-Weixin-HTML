@@ -91,19 +91,19 @@
   </div>
   <script src="js/zepto.min.js"></script>
   <script src="js/dialog.min.js"></script>
-  <script src="http://cache.500boss.com/mobile/widget/leave/LeaveUtil.js"></script>
+  <!-- <script src="http://cache.500boss.com/mobile/widget/leave/LeaveUtil.js"></script> -->
   <script>
-  (function() {
-    var focus = new LeaveUtil("leaveContainer", {
-      flakeCount: 4,
-      options: "image/money.png",
-      minSize: 10, //图片最小宽度minSize,maxSize自定义
-      maxSize: 25, //图片最大宽度
-      autoPlay: true, //是否自动播放autoPlay:true自动播放,autoPlay:false不自动播放
-      iCount: "infinite", //动画循环次数，iCount: n|infinite;
-      autoTime: "10s"
-    });
-  })();
+  // (function() {
+  //   var focus = new LeaveUtil("leaveContainer", {
+  //     flakeCount: 4,
+  //     options: "image/money.png",
+  //     minSize: 10, //图片最小宽度minSize,maxSize自定义
+  //     maxSize: 25, //图片最大宽度
+  //     autoPlay: true, //是否自动播放autoPlay:true自动播放,autoPlay:false不自动播放
+  //     iCount: "infinite", //动画循环次数，iCount: n|infinite;
+  //     autoTime: "10s"
+  //   });
+  // })();
   (function(){
     $("body").one("click","[data-click=agree]", function(){
       var agreeBtn= $(this);
