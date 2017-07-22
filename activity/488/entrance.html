@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telphone=no, email=no" />
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <!--<meta name="full-screen" content="yes">-->
+  <!-- 强制图片显示 -->
+  <meta name="imagemode" content="force" />
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- QQ强制全屏 -->
+  <!--<meta name="x5-fullscreen" content="true">-->
+  <meta name="Author" contect="500.com|zhangxg">
+  <title>下载彩掌柜送488</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/dialog.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/flexible.js"></script>
+</head>
+
+<body class="page-entrance bg-red">
+  <div class="wrap">
+    <div class="slogan">
+      <div class="slogan-img"></div>
+      <div class="slogan-text slogan-text-02"></div>
+    </div>
+    <div class="main53d clearfix">
+      <ul>
+        <li><div id="leaveContainer"></div></li>
+        <li class="golden text-center z-min" style="margin-top: -0.35rem">
+          <div class="golden-img"><img src="image/golden2.png" alt="golden"></div>
+        </li>
+        <li class="ribbon text-center z-1x">
+          <div class="ribbon-img"><img src="image/bg-ribbon.png" alt="ribbon background" class="pointer-no"></div>
+        </li>
+        <li style="margin-top: -5.0rem;"><img src="image/circle-light.png" alt="light" class="pointer-no"> </li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <!-- 正式内容 begin -->
+    <div class="main z-4x" style="margin-top: -7.0rem">
+      <div class="container">
+        <div class="block text-center">
+          <p id="text-info" class="orange-dark f26 l-s">客户所用红包，出票后计入店主账户，可随时提款</p>
+          <a class="material-design btn btn-orange font-hei" data-click="agree">愿意参加此活动</a>
+          <p><a id="redpack" class="orange font-hei f28 visi-no">查看我的红包</a></p>
+        </div>
+        <div class="block">
+          <h3 class="rule m-b f26 orange bold b-circle bg-red-dark">活动规则</h3>
+        </div>
+        <div class="p b-r bg-red-dark">
+          <div class="block f24 red-light">
+            <p class="lh30">同意参与本次红包活动后，在店主手机app”我的-红包”中可以查看领取红包的进度，您可以宣传告知客户，下载彩掌柜购彩客户端领取发放的红包。</p>
+            <h3 class="m-t">1.  领取</h3>
+            <ul class="list-disc-in lh30">
+              <li>在活动页面，每个客户可以一次性领取10个红包，每周使用一个（共十周），每个金额2元。</li>
+              <li>每家店共有20个客户领取名额。</li>
+              <li>店主推荐20个客户领取红包，每个用户至少使用一个红包后，店主可获得88元红包。</li>
+            </ul>
+            <h3 class="m-t">2.  使用</h3>
+            <ul class="list-disc-in lh30">
+              <li>每个红包有效期均为七天，第一个红包领取时立即激活，当上一个红包有效期结束之后，下一个红包自动激活。</li>
+              <li><span class="orange">只能在领取时所绑定的店铺使用。</span></li>
+              <li>客户使用红包后，将会记录并展示在接单详情，客户只需要支付红包与实际方案差额。</li>
+              <li><span class="orange">店主在接单详情点击完成出票后</span>，客户使用的红包会进入到店主的账户中。</li>
+              <li>店主1天之内未点击完成出票，红包自动退回客户账。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 正式内容 end -->
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="block text-center font-hei red-dark p-tb">本活动最终解释权归彩掌柜所有</div>
+      </div>
+    </footer>
+    <!-- footer end -->
+  </div>
+  <script src="js/zepto.min.js"></script>
+  <script src="js/dialog.min.js"></script>
+  <script src="http://cache.500boss.com/mobile/widget/leave/LeaveUtil.js"></script>
+  <script>
+  (function() {
+    var focus = new LeaveUtil("leaveContainer", {
+      flakeCount: 4,
+      options: "image/money.png",
+      minSize: 10, //图片最小宽度minSize,maxSize自定义
+      maxSize: 25, //图片最大宽度
+      autoPlay: true, //是否自动播放autoPlay:true自动播放,autoPlay:false不自动播放
+      iCount: "infinite", //动画循环次数，iCount: n|infinite;
+      autoTime: "10s"
+    });
+  })();
+  (function(){
+    $("body").one("click","[data-click=agree]", function(){
+      var agreeBtn= $(this);
+      $(document).dialog({
+        type : 'toast',
+        infoIcon: 'image/icon/success.png',
+        infoText: '参加成功',
+        autoClose: 2500,
+        onClosed: function() {
+          agreeBtn.text("去给客户发红包").addClass("shake");
+          $("#text-info").text("让彩民下载，并绑定本店，即可领取红包");
+          $("#redpack").removeClass("visi-no").addClass("anim-opacity");
+        }
+      });     
+    });
+  })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telphone=no, email=no" />
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <!--<meta name="full-screen" content="yes">-->
+  <!-- 强制图片显示 -->
+  <meta name="imagemode" content="force" />
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- QQ强制全屏 -->
+  <!--<meta name="x5-fullscreen" content="true">-->
+  <meta name="Author" contect="500.com|zhangxg">
+  <title>下载彩掌柜送红包</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/dialog.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/flexible.js"></script>
+</head>
+
+<body class="page-client page-full bg-red">
+  <div class="wrap">
+    <div class="slogan">
+      <div class="slogan-img"></div>
+      <div class="clear"></div>
+    </div>
+    <div class="main53d clearfix">
+      <ul>
+        <li><div id="leaveContainer"></div></li>
+        <li class="golden text-center z-1x">
+          <div class="golden-img"><img src="image/golden3.png" alt="golden" class="pointer-no"></div>
+        </li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <!-- 正式内容 begin -->
+    <div class="main z-4x" style="margin-top: -6.65rem">
+      <div class="container">
+        <div class="block text-center" style="margin-bottom: 0.75rem">
+          <a class="btn btn-orange font-hei">马上领取</a>
+        </div>
+        <div class="block">
+          <h3 class="rule m-b f26 orange bold b-circle bg-red-dark">红包使用规则</h3>
+        </div>
+        <div class="block f24 red-light" style="margin-bottom: 0.725rem">
+            <ul class="list-unstyled lh32">
+              <li>1. 当账户存在可用红包时，发单会自动优先使用红包，您只需要支付红包与实际方案差额。</li>
+              <li>2. 彩掌柜发放的红包，仅能在领取时所绑定的店铺使用。</li>
+              <li>3. 每个红包有效期均为七天，第一个红包领取时立即激活，当上一个红包有效期结束之后，下一个红包自动激活，并请在使用期限使用，过期作废。</li>
+              <li>4. 如果使用红包后，由于各种原因订单取消，红包将原路返回。</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    <!-- 正式内容 end -->
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="block text-center font-hei red-dark p-tb">本活动最终解释权归彩掌柜所有</div>
+      </div>
+    </footer>
+    <!-- footer end -->
+  </div>
+  <script src="js/zepto.min.js"></script>
+  <script src="js/dialog.min.js"></script>
+  <script src="http://cache.500boss.com/mobile/widget/leave/LeaveUtil.js"></script>
+  <script>
+  (function() {
+    var focus = new LeaveUtil("leaveContainer", {
+      flakeCount: 4,
+      options: "image/money.png",
+      minSize: 10, //图片最小宽度minSize,maxSize自定义
+      maxSize: 25, //图片最大宽度
+      autoPlay: true, //是否自动播放autoPlay:true自动播放,autoPlay:false不自动播放
+      iCount: "infinite", //动画循环次数，iCount: n|infinite;
+      autoTime: "10s"
+    });
+  })();
+  </script>
+</body>
+
+</html>
