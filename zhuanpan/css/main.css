@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  margin-left: 0;
+  -webkit-margin-before: 0;
+  list-style-position: inside;
+}
+
+html,
+body {
+  font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h1 {
+  font-size: 0.53333333rem
+}
+
+h2 {
+  font-size: 0.48rem
+}
+
+h3 {
+  font-size: 0.42666667rem
+}
+
+h4 {
+  font-size: 0.4rem
+}
+
+h5 {
+  font-size: 0.37333333rem
+}
+
+h6 {
+  font-size: 0.32rem
+}
+
+.list-unstyled {
+  list-style: none;
+}
+
+.m-y {
+  margin-top: 0.32rem!important;
+  margin-bottom: 0.32rem!important;
+}
+
+.m-y-md {
+  margin-top: 0.48rem!important;
+  margin-bottom: 0.48rem!important;
+}
+
+.m-y-lg {
+  margin-top: 0.64rem!important;
+  margin-bottom: 0.64rem!important;
+}
+
+.text-center {
+  text-align: center!important;
+}
+
+.text-muted {
+  color: #999!important;
+}
+
+body {
+  // background: url("../image/full-bg.jpg") no-repeat center center fixed;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+  overflow-x: hidden;
+}
+
+.wrap {
+  position: relative;
+  max-width: 10rem;
+  height: 100vh;
+  margin: 0 auto;
+  background: url("../image/full-bg.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #713892;
+  overflow-x: hidden;
+}
+
+.logo {
+  width: 3.2rem;
+  height: 1.33333333rem;
+  margin: 0 auto;
+  margin-top: -0.1rem;
+  background: url("../image/logo.png") no-repeat center center;
+  background-size: 100%;
+}
+
+.content {
+  width: 8.90666667rem;
+  margin: 0 auto;
+}
+
+.main .content {
+  color: #fff;
+  font-size: 0.37333333rem;
+}
+
+#turntable {
+  position: relative;
+  width: 8.90666667rem;
+  height: 8.90666667rem;
+  margin: 0 auto;
+}
+
+#rotate {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+#pointer {
+  position: absolute;
+  width: 2.34666667rem;
+  height: 2.8rem;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  margin-left: -1.17333333rem;
+  margin-top: -1.86666667rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 99;
+}
+
+.footer::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -1.33333333rem;
+  width: 100%;
+  height: 1.49333333rem;
+  background: url(../image/footer-bg.png) no-repeat center center;
+  background-size: 100%;
+  z-index: 999;
+}

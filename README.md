@@ -6,6 +6,9 @@
 ### 众测天下
 微站：https://cofess.github.com/mobile-static-site/zc/M/Index/index.html
 
+### 大转盘
+微站：https://cofess.github.com/mobile-static-site/zhuanpan/index.html
+
 ### 彩票
 微站：https://cofess.github.com/mobile-static-site/lottery/
 
